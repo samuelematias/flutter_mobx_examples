@@ -11,6 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  extensions:
+    git:
+      url: https://github.com/samuelematias/basic_flutter_packages
+      ref: master
+      path: packages/extensions
   increment_counter_package:
     path: ../increment_counter_package
 

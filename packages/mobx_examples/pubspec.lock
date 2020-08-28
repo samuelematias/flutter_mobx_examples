@@ -176,6 +176,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.6"
+  extensions:
+    dependency: "direct main"
+    description:
+      path: "packages/extensions"
+      ref: master
+      resolved-ref: "0a90fd5fbd5e89618f093dc26fd83340567a2add"
+      url: "https://github.com/samuelematias/basic_flutter_packages"
+    source: git
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
