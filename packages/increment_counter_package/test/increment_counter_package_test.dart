@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:increment_counter_package/src/ui/increment_counter/increment_counter_page.dart';
+import 'package:increment_counter_package/src/ui/increment_counter/pages/increment_counter_page.dart';
 
 void main() {
   // Create a MaterialApp to test.
