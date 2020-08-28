@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:increment_counter_package/increment_counter_package.dart';
+import 'src/ui/home/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const IncrementCounterPage(title: _title),
+      home: const HomePage(),
     );
   }
 }
