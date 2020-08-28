@@ -1,0 +1,45 @@
+name: Flutter - Build and Deploy on GitHub Pages (CD)
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'dev'
+      - name: Enable Web
+        run: flutter config --enable-web
+        working-directory: ./
+      - name: Get all packages to install dependencies
+        run: bash ./flutter_packages.sh
+      # - name: Verify chanages
+      #   run: bash ./git_changes.sh
+      - name: Analyze the code
+        run: flutter analyze || exit 1
+      - name: Run all tests
+        run: bash ./tests_packages.sh
+        working-directory: ./
+      - name: Build Web
+        run: flutter build web --release --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
+        working-directory: ./
+      - name: Deploy
+        run: |
+          cd build/web
+          git init
+          git config user.name  "CI"
+          git config user.email "flutter-ci@github.com"
+          git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/samuelematias/flutter_mobx_examples.git
+          git checkout -b gh-pages
+          git add .
+          git commit -m "Add GitHub Pages support"
+          git push --force secure-origin gh-pages
