@@ -26,7 +26,7 @@ jobs:
       - name: Run all tests
         run: bash ./tests_packages.sh
         working-directory: ./
-      - name: Build Flutter web app
+      - name: Build Flutter web app from a specific directory (packages/mobx_examples)
         run: |
           flutter build web --release --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
         working-directory: ./packages/mobx_examples
@@ -34,5 +34,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/web
+          publish_dir: packages/mobx_examples/build/web
           allow_empty_commit: true
