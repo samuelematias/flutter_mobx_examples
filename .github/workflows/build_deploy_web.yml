@@ -3,7 +3,7 @@ name: Flutter - Build and Deploy on GitHub Pages (CD)
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
         run: |
           flutter build web --release --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
         working-directory: ./packages/mobx_examples
-      - name: Deploy Flutter web app
+      - name: Deploy Flutter web app from a specific directory (packages/mobx_examples)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
