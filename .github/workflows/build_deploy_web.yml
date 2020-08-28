@@ -22,8 +22,6 @@ jobs:
         working-directory: ./
       - name: Get all packages to install dependencies
         run: bash ./flutter_packages.sh
-      # - name: Verify chanages
-      #   run: bash ./git_changes.sh
       - name: Analyze the code
         run: flutter analyze || exit 1
       - name: Run all tests
