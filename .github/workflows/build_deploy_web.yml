@@ -16,7 +16,7 @@ jobs:
         uses: subosito/Flutter-action@v1
         with:
           channel: 'dev'
-      - name: Enable Flutter Web
+      - name: Enable Flutter web
         run: Flutter config --enable-web
         working-directory: ./
       - name: Get all packages to install dependencies
@@ -26,12 +26,12 @@ jobs:
       - name: Run all tests
         run: bash ./tests_packages.sh
         working-directory: ./
-      - name: Build Flutter Web App
+      - name: Build Flutter web app
         run: |
-            flutter build web --release --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
-        - name: Deploy
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: build/web
-            allow_empty_commit: true
+          flutter build web --release --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
+      - name: Deploy Flutter web app
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/web
+          allow_empty_commit: true
