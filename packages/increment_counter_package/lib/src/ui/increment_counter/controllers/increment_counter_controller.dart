@@ -5,12 +5,14 @@ class IncrementCounterController {
     increment = Action(() => _increment());
 
     autorun((_) {
-      print(conuter.value);
+      print(counter);
     });
   }
 
-  Observable<int> conuter = Observable(0);
+  final Observable<int> _counter = Observable(0);
   Action increment;
+  int get counter => _counter.value;
+  set counter(int newValue) => _counter.value = newValue;
 
-  int _increment() => conuter.value = conuter.value + 1;
+  int _increment() => counter++;
 }

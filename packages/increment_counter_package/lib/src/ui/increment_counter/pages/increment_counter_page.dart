@@ -25,7 +25,7 @@ class IncrementCounterPage extends StatelessWidget {
             ),
             Observer(
               builder: (_) => Text(
-                '${controller.conuter.value}',
+                '${controller.counter}',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
