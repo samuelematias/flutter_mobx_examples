@@ -16,8 +16,5 @@ do
         printf "${RED}" "No found test in: $dir"
     fi
 done
-# # tests on root
-# printf "${GREEN}" "Running tests in: root"
-# flutter test
 printf "${BLUE}" "Finished test in packages"
 

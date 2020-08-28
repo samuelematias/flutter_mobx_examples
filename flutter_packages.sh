@@ -10,7 +10,4 @@ do
   flutter packages get $dir
   cd -
 done
-# pub get on root
-# printf "${GREEN}" "Get in: root"
-# flutter packages get
 printf "${BLUE}" 'Finished get in all packages'

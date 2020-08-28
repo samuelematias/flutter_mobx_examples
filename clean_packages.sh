@@ -10,7 +10,4 @@ do
   flutter clean
   cd -
 done
-# clean on root
-# printf "${GREEN}" "Cleaning: root"
-# flutter clean
 printf "${BLUE}" "Finished clean all packages"
