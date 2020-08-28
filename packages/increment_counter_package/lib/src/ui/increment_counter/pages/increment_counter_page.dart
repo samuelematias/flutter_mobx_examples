@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import '../controllers/increment_counter_controller.dart';
 
 class IncrementCounterPage extends StatelessWidget {
   const IncrementCounterPage({Key key, this.title}) : super(key: key);
@@ -8,7 +10,8 @@ class IncrementCounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const int _counter = 0;
+    final IncrementCounterController controller = IncrementCounterController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -20,15 +23,17 @@ class IncrementCounterPage extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Observer(
+              builder: (_) => Text(
+                '${controller.conuter.value}',
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => controller.increment(),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
