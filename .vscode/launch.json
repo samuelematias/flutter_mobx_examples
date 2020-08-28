@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Dart",
-            "program": "bin/main.dart",
+            "program": "packages/mobx_examples/lib/main.dart",
             "request": "launch",
             "type": "dart"
         }
