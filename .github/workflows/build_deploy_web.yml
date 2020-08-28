@@ -3,7 +3,7 @@ name: Flutter - Build and Deploy on GitHub Pages (CD)
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   build:
