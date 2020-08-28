@@ -45,3 +45,6 @@ linter:
 
     # It is important to know the type of parameter for your function or method.
     avoid_types_on_closure_parameters: false
+
+    # It is important to know the type of variables inside a function or method.
+    omit_local_variable_types: false
