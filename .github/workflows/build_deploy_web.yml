@@ -18,14 +18,12 @@ jobs:
           channel: 'dev'
       - name: Enable Flutter web
         run: flutter config --enable-web
-        working-directory: ./
       - name: Get all packages to install dependencies
         run: bash ./flutter_packages.sh
       - name: Analyze the code
         run: flutter analyze || exit 1
       - name: Run all tests
         run: bash ./tests_packages.sh
-        working-directory: ./
       - name: Build Flutter web app
         run: |
           flutter build web --release --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
