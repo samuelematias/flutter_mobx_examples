@@ -48,3 +48,6 @@ linter:
 
     # It is important to know the type of variables inside a function or method.
     omit_local_variable_types: false
+
+    # Because some plugins like Mobx, makes use of functions by parameter and this rule conflicts with that.
+    unnecessary_lambdas: false
