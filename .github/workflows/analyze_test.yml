@@ -14,11 +14,13 @@ jobs:
         uses: subosito/flutter-action@v1
         with:
           channel: 'dev'
-      - name: Enable flutter web
+      - name: Enable Flutter web
         run: flutter config --enable-web
+        working-directory: ./
       - name: Get all packages to install dependencies
         run: bash ./flutter_packages.sh
       - name: Analyze the code
         run: flutter analyze || exit 1
       - name: Run all tests
         run: bash ./tests_packages.sh
+        working-directory: ./
