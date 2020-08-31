@@ -32,8 +32,7 @@ class InputFieldsPage extends StatelessWidget {
                     controller.changeLastName(newName: value),
               ),
               Observer(
-                builder: (_) =>
-                    Text('${controller.name} ${controller.lastName}'),
+                builder: (_) => Text(controller.fullName),
               ),
             ],
           ),

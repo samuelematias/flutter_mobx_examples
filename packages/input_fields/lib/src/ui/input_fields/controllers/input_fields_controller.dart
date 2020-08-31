@@ -12,6 +12,9 @@ abstract class InputFieldsControllerBase with Store {
   @observable
   String lastName = '';
 
+  @computed
+  String get fullName => '$name $lastName';
+
   @action
   String changeName({@required String newName}) => name = newName;
 
