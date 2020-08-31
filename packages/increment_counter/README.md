@@ -1,3 +1,3 @@
-# Increment Counter
+# Increment counter
 
-A package with Increment Counter feature.
+A package with Increment counter feature.

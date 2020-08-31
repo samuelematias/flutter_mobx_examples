@@ -1,3 +1,3 @@
-# Input Fields
+# Input fields
 
-A package with Input Fields feature.
+A package with Input fields feature.

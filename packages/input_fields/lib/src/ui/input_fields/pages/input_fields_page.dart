@@ -11,7 +11,7 @@ class InputFieldsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Input Fields'),
+        title: const Text('Input fields'),
       ),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
