@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import '../controllers/input_fields_controller.dart';
 
 class InputFieldsPage extends StatelessWidget {
   const InputFieldsPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final InputFieldsController controller = InputFieldsController();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Input Fields'),
@@ -17,8 +21,20 @@ class InputFieldsPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _buildTexfield(labelText: 'Nome'),
-              _buildTexfield(labelText: 'Sobrenome'),
+              _buildTexfield(
+                labelText: 'Nome',
+                onChanged: (String value) =>
+                    controller.changeName(newName: value),
+              ),
+              _buildTexfield(
+                labelText: 'Sobrenome',
+                onChanged: (String value) =>
+                    controller.changeLastName(newName: value),
+              ),
+              Observer(
+                builder: (_) =>
+                    Text('${controller.name} ${controller.lastName}'),
+              ),
             ],
           ),
         ),
@@ -26,10 +42,15 @@ class InputFieldsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildTexfield({@required String labelText}) => Column(
+  Widget _buildTexfield({
+    @required String labelText,
+    @required ValueChanged<String> onChanged,
+  }) =>
+      Column(
         children: [
           TextField(
             decoration: InputDecoration(labelText: labelText),
+            onChanged: onChanged,
           ),
           const SizedBox(height: 20)
         ],
