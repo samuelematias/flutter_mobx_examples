@@ -1,5 +1,5 @@
 name: mobx_examples
-description: A new Flutter project.
+description: The main package of the mobx_examples application.
 
 publish_to: 'none'
 
@@ -11,11 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  extensions:
-    git:
-      url: https://github.com/samuelematias/basic_flutter_packages
-      ref: master
-      path: packages/extensions
+  common_package:
+    path: ../common
   increment_counter_package:
     path: ../increment_counter
 
@@ -24,7 +21,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.2
 
 flutter:
   uses-material-design: true

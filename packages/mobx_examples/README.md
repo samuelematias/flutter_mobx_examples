@@ -1,6 +1,10 @@
-The Mobx Examples project.
+# The Mobx Examples project.
 
-At this stage, it is currently empty.
+This project has the following packages:
+
+- [Increment Counter](https://github.com/samuelematias/flutter_mobx_examples/tree/main/packages/increment_counter)
+
+- [Common](https://github.com/samuelematias/flutter_mobx_examples/tree/main/packages/common)
 
 # Installation
 

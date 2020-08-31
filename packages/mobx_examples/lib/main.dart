@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
     const String _title = 'Mobx Examples';
     return MaterialApp(
       title: _title,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: ThemeData.dark(),
       home: const HomePage(),
     );
   }

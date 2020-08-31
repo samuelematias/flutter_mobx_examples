@@ -1,0 +1,26 @@
+name: common_package
+description: A package with common things in the project.
+version: 0.0.1
+author: null
+homepage: null
+
+environment:
+  sdk: '>=2.7.0 <3.0.0'
+  flutter: '>=1.17.0 <2.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mobx: ^1.2.1+2
+  flutter_mobx: ^1.1.0+2
+  extensions:
+    git:
+      url: https://github.com/samuelematias/basic_flutter_packages
+      ref: master
+      path: packages/extensions
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter: null
