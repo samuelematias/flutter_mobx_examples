@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           _buildFeatureOptions(
+            context,
             featureName: 'Increment counter',
             onTap: () {
               Navigator.push(
@@ -21,20 +22,28 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
-          _buildFeatureOptions(featureName: 'Input name', onTap: () {}),
+          _buildFeatureOptions(context,
+              featureName: 'Input name', onTap: () {}),
         ],
       ),
     );
   }
 
-  Widget _buildFeatureOptions({
+  Widget _buildFeatureOptions(
+    BuildContext context, {
     @required String featureName,
     @required GestureTapCallback onTap,
   }) =>
       Column(
         children: [
           const SizedBox(height: 50),
-          InkWell(onTap: onTap, child: Text(featureName).h1()),
+          InkWell(
+            onTap: onTap,
+            child: Text(featureName).h1(
+              style:
+                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+            ),
+          ),
         ],
       );
 }
