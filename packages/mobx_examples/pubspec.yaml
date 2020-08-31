@@ -17,7 +17,7 @@ dependencies:
       ref: master
       path: packages/extensions
   increment_counter_package:
-    path: ../increment_counter_package
+    path: ../increment_counter
 
   cupertino_icons: ^0.1.3
 

@@ -254,7 +254,7 @@ packages:
   increment_counter_package:
     dependency: "direct main"
     description:
-      path: "../increment_counter_package"
+      path: "../increment_counter"
       relative: true
     source: path
     version: "0.0.1"
