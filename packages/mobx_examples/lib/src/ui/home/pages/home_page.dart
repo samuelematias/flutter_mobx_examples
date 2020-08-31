@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:extensions/extensions.dart';
 import 'package:increment_counter_package/increment_counter_package.dart';
+import 'package:input_fields_package/input_fields_package.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -22,8 +23,17 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
-          _buildFeatureOptions(context,
-              featureName: 'Input name', onTap: () {}),
+          _buildFeatureOptions(
+            context,
+            featureName: 'Input fields',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<InputFieldsPage>(
+                    builder: (context) => const InputFieldsPage()),
+              );
+            },
+          ),
         ],
       ),
     );
