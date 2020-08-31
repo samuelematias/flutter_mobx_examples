@@ -1,5 +1,5 @@
 name: mobx_examples
-description: A new Flutter project.
+description: The main package of the mobx_examples application.
 
 publish_to: 'none'
 
