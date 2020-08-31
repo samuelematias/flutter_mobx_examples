@@ -1,5 +1,5 @@
 name: increment_counter_package
-description: A new Flutter package project.
+description: A package with increment_counter feature.
 version: 0.0.1
 author: null
 homepage: null
@@ -11,13 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mobx: ^1.2.1+2
-  flutter_mobx: ^1.1.0+2
+  common_package:
+    path: ../common
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mobx_codegen: ^1.1.0+1
-  build_runner: ^1.10.2
 
 flutter: null
