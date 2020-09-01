@@ -8,17 +8,17 @@ abstract class _ClientModelBase with Store {
   String name;
 
   @action
-  String changeName(String value) => name = value;
+  String changeName({String newName}) => name = newName;
 
   @observable
   String email;
 
   @action
-  String changeEmail(String value) => email = value;
+  String changeEmail({String newEmail}) => email = newEmail;
 
   @observable
   String cpf;
 
   @action
-  String changeCpf(String value) => cpf = value;
+  String changeCpf({String newCpf}) => cpf = newCpf;
 }
