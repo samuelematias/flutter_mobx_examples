@@ -13,29 +13,25 @@ class InputFieldsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Input fields'),
       ),
-      body: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildTexfield(
-                labelText: 'Nome',
-                onChanged: (String value) =>
-                    controller.changeName(newName: value),
-              ),
-              _buildTexfield(
-                labelText: 'Sobrenome',
-                onChanged: (String value) =>
-                    controller.changeLastName(newName: value),
-              ),
-              Observer(
-                builder: (_) => Text(controller.fullName),
-              ),
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _buildTexfield(
+              labelText: 'Nome',
+              onChanged: (String value) =>
+                  controller.changeName(newName: value),
+            ),
+            _buildTexfield(
+              labelText: 'Sobrenome',
+              onChanged: (String value) =>
+                  controller.changeLastName(newName: value),
+            ),
+            Observer(
+              builder: (_) => Text(controller.fullName),
+            ),
+          ],
         ),
       ),
     );
