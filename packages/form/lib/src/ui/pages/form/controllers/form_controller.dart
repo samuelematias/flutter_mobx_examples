@@ -7,6 +7,9 @@ class FormController = _FormControllerBase with _$FormController;
 abstract class _FormControllerBase with Store {
   final ClientModel client = ClientModel();
 
+  @computed
+  bool get isValid => validateName() == null && validateEmail() == null;
+
   String validateName() {
     if (client.name == null || client.name.isEmpty) {
       return 'Required field';

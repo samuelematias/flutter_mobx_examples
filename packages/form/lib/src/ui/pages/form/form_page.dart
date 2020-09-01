@@ -38,10 +38,14 @@ class FormPage extends StatelessWidget {
                 errorText: controller.validateCpf,
               ),
             ),
-            PrimaryButton(
-              label: 'Click me',
-              onPressed: () {},
+            Observer(
+              builder: (_) => PrimaryButton(
+                label: 'Save',
+                onPressed: () {},
+                disabled: !controller.isValid,
+              ),
             ),
+
             // PrimaryButton()
           ],
         ),
