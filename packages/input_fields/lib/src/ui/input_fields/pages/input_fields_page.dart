@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:common_package/common_package.dart';
 import '../controllers/input_fields_controller.dart';
 
 class InputFieldsPage extends StatelessWidget {

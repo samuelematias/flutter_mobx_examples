@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:mobx/mobx.dart';
+import 'package:common_package/common_package.dart';
 part 'input_fields_controller.g.dart';
 
 class InputFieldsController = InputFieldsControllerBase

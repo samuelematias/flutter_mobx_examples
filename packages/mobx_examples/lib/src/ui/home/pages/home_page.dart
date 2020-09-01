@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:extensions/extensions.dart';
+import 'package:common_package/common_package.dart';
 import 'package:form_package/form_package.dart';
 import 'package:increment_counter_package/increment_counter_package.dart';
 import 'package:input_fields_package/input_fields_package.dart';

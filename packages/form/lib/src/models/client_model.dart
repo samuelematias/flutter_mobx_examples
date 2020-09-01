@@ -1,4 +1,4 @@
-import 'package:mobx/mobx.dart';
+import 'package:common_package/common_package.dart';
 part 'client_model.g.dart';
 
 class ClientModel = _ClientModelBase with _$ClientModel;

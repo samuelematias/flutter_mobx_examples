@@ -1,16 +1,48 @@
+import 'package:common_package/common_package.dart';
 import 'package:flutter/material.dart';
+import '../form/controllers/form_controller.dart';
 
 class FormPage extends StatelessWidget {
   const FormPage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final controller = FormController();
+
     return Scaffold(
       appBar: AppBar(title: const Text('Form')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
-            _buildTexfield(labelText: 'Name', onChanged: (String value) {}),
+            Observer(
+              builder: (_) => _buildTexfield(
+                labelText: 'Name',
+                onChanged: (String value) =>
+                    controller.client.changeName(newName: value),
+                errorText: controller.validateName,
+              ),
+            ),
+            Observer(
+              builder: (_) => _buildTexfield(
+                labelText: 'Email',
+                onChanged: (String value) =>
+                    controller.client.changeEmail(newEmail: value),
+                errorText: controller.validateEmail,
+              ),
+            ),
+            Observer(
+              builder: (_) => _buildTexfield(
+                labelText: 'Cpf',
+                onChanged: (String value) =>
+                    controller.client.changeCpf(newCpf: value),
+                errorText: controller.validateCpf,
+              ),
+            ),
+            PrimaryButton(
+              label: 'Click me',
+              onPressed: () {},
+            ),
+            // PrimaryButton()
           ],
         ),
       ),
