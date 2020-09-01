@@ -17,6 +17,8 @@ dependencies:
     path: ../increment_counter
   input_fields_package:
     path: ../input_fields
+  form_package:
+    path: ../form
 
   cupertino_icons: ^0.1.3
 

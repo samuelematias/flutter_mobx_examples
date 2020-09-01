@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:extensions/extensions.dart';
+import 'package:form_package/form_package.dart';
 import 'package:increment_counter_package/increment_counter_package.dart';
 import 'package:input_fields_package/input_fields_package.dart';
 
@@ -31,6 +32,17 @@ class HomePage extends StatelessWidget {
                 context,
                 MaterialPageRoute<InputFieldsPage>(
                     builder: (context) => const InputFieldsPage()),
+              );
+            },
+          ),
+          _buildFeatureOptions(
+            context,
+            featureName: 'Form',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<FormPage>(
+                    builder: (context) => const FormPage()),
               );
             },
           ),

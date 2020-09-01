@@ -90,6 +90,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  form_package:
+    dependency: "direct main"
+    description:
+      path: "../form"
+      relative: true
+    source: path
+    version: "0.0.1"
   increment_counter_package:
     dependency: "direct main"
     description:
