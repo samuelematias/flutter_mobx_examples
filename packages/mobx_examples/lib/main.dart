@@ -4,6 +4,8 @@ import 'package:form_package/form_package.dart';
 import 'src/ui/home/pages/home_page.dart';
 
 void main() {
+  final GetIt getIt = GetIt.I;
+  getIt.registerSingleton<FormController>(FormController());
   runApp(const MyApp());
 }
 
@@ -12,17 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const String _title = 'Mobx Examples';
-    return MultiProvider(
-      providers: [
-        Provider<FormController>(
-          create: (_) => FormController(),
-        )
-      ],
-      child: MaterialApp(
-        title: _title,
-        theme: ThemeData.dark(),
-        home: const HomePage(),
-      ),
+    return MaterialApp(
+      title: _title,
+      theme: ThemeData.dark(),
+      home: const HomePage(),
     );
   }
 }

@@ -7,7 +7,7 @@ class FormPage extends StatelessWidget {
   const FormPage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<FormController>(context);
+    final controller = GetIt.I.get<FormController>();
 
     return Scaffold(
       appBar: AppBar(

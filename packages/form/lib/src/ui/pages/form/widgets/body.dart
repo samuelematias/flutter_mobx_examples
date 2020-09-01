@@ -6,7 +6,7 @@ class BodyWidget extends StatelessWidget {
   const BodyWidget({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<FormController>(context);
+    final controller = GetIt.I.get<FormController>();
     return Padding(
       padding: const EdgeInsets.all(16),
       child: ListView(
