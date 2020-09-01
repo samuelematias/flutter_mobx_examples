@@ -23,6 +23,7 @@ dependencies:
       url: https://github.com/samuelematias/basic_flutter_packages
       ref: master
       path: packages/custom_buttons
+  provider: ^4.3.2+1
 
 dev_dependencies:
   flutter_test:
