@@ -20,6 +20,7 @@ class FormPage extends StatelessWidget {
   Widget _buildTexfield({
     @required String labelText,
     @required ValueChanged<String> onChanged,
+    String Function() errorText,
   }) =>
       Column(
         children: [
@@ -27,7 +28,7 @@ class FormPage extends StatelessWidget {
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               labelText: labelText,
-              errorText: 'error xd',
+              errorText: errorText == null ? null : errorText(),
             ),
             onChanged: onChanged,
           ),
