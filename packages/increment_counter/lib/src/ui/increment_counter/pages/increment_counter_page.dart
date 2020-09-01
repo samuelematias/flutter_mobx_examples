@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:common_package/common_package.dart';
 import '../controllers/increment_counter_controller.dart';
 
 class IncrementCounterPage extends StatelessWidget {

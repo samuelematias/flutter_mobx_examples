@@ -51,3 +51,8 @@ linter:
 
     # Because some plugins like Mobx, makes use of functions by parameter and this rule conflicts with that.
     unnecessary_lambdas: false
+
+    # In addition to one rule, it conflicts with another,
+    # it usually asks to be used in places where there is no need for spread
+    cascade_invocations: false
+    avoid_single_cascade_in_expression_statements: false

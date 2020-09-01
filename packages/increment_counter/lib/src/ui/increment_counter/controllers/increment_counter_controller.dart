@@ -1,4 +1,4 @@
-import 'package:mobx/mobx.dart';
+import 'package:common_package/common_package.dart';
 part 'increment_counter_controller.g.dart';
 
 class IncrementCounterController = IncrementCounterControllerBase

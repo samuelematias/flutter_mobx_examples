@@ -169,6 +169,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.2"
+  custom_buttons:
+    dependency: transitive
+    description:
+      path: "packages/custom_buttons"
+      ref: master
+      resolved-ref: "0a90fd5fbd5e89618f093dc26fd83340567a2add"
+      url: "https://github.com/samuelematias/basic_flutter_packages"
+    source: git
+    version: "0.0.1"
   dart_style:
     dependency: transitive
     description:
@@ -216,6 +225,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  get_it:
+    dependency: transitive
+    description:
+      name: get_it
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.4"
   glob:
     dependency: transitive
     description:

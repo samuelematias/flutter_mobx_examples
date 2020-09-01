@@ -8,6 +8,8 @@ This project has the following packages:
 
 - [Input fields](https://github.com/samuelematias/flutter_mobx_examples/tree/main/packages/input_fields)
 
+- [Form](https://github.com/samuelematias/flutter_mobx_examples/tree/main/packages/form)
+
 # Installation
 
 ```bash
