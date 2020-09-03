@@ -38,15 +38,22 @@ class _ListPageState extends State<ListPage> {
   }
 
   Widget _buildBody() => Observer(
-        builder: (_) => ListView.builder(
-            itemCount: _controller.listFiltered.length,
-            itemBuilder: (_, index) {
-              final ItemModel item = _controller.listFiltered[index];
-              return Itemwidget(
-                item: item,
-                removeClicked: () => _onPressedRemoveItem(model: item),
-              );
-            }),
+        builder: (_) {
+          if (_controller.output.value == null) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return ListView.builder(
+              itemCount: _controller.output.value.length,
+              itemBuilder: (_, index) {
+                final ItemModel item = _controller.output.value[index];
+                return Itemwidget(
+                  item: item,
+                  removeClicked: () => _onPressedRemoveItem(model: item),
+                );
+              });
+        },
       );
 
   Future<void> _buildDialog() {
