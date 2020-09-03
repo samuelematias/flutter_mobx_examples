@@ -16,7 +16,8 @@
 
 ## About this project 🗣
 
-This project contains examples of simple apps using [Mobx](https://mobx.netlify.app/) as stage management.
+This project contains examples of simple apps using [Mobx](https://mobx.netlify.app/) as stage management.</br>
+The learning about [Mobx](https://mobx.netlify.app/) was done on top of the [Flutterando](https://www.youtube.com/playlist?list=PLlBnICoI-g-foW-Osr0PlpE1_AD3aItbZ) playlist, which covers how to use [Mobx](https://mobx.netlify.app/) from basic to advanced.
 
 ## Tech Stack 👩🏾‍💻
 
