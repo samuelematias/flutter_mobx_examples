@@ -30,5 +30,6 @@ This project contains examples of simple apps using [Mobx](https://mobx.netlify.
 - [mobx_codegen](https://pub.dev/packages/mobx_codegen)
 - [build_runner](https://pub.dev/packages/build_runner)
 - [get_it](https://pub.dev/packages/get_it)
+- [rxdart](https://pub.dev/packages/rxdart)
 
 <!-- about app and course section END -->
