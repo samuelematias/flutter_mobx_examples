@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
+import '../../models/item_model.dart';
 import 'components/item_widget.dart';
+import 'controller/list_controller.dart';
 
 class ListPage extends StatefulWidget {
   const ListPage({Key key}) : super(key: key);
@@ -9,6 +10,8 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
+  final _controller = ListController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +30,11 @@ class _ListPageState extends State<ListPage> {
   }
 
   Widget _buildBody() => ListView.builder(
-        itemCount: 10,
-        itemBuilder: (_, index) => const Itemwidget(),
-      );
+      itemCount: _controller.listItems.length,
+      itemBuilder: (_, index) {
+        final ItemModel item = _controller.listItems[index];
+        return Itemwidget(item: item);
+      });
 
   Future<void> _buildDialog() => showDialog(
         context: context,
