@@ -14,4 +14,8 @@ abstract class _ListControllerBase with Store {
 
   @action
   List<ItemModel> addItem(ItemModel model) => listItems..addAll([model]);
+
+  @action
+  List<ItemModel> removeItem(ItemModel model) =>
+      listItems..removeWhere((item) => item.title == model.title);
 }
