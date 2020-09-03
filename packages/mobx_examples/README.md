@@ -10,6 +10,8 @@ This project has the following packages:
 
 - [Form](https://github.com/samuelematias/flutter_mobx_examples/tree/main/packages/form)
 
+- [List](https://github.com/samuelematias/flutter_mobx_examples/tree/main/packages/list)
+
 # Installation
 
 ```bash
