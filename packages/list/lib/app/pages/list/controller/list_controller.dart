@@ -1,4 +1,4 @@
-import 'package:mobx/mobx.dart';
+import 'package:common_package/common_package.dart';
 import '../../../models/item_model.dart';
 part 'list_controller.g.dart';
 
@@ -11,6 +11,9 @@ abstract class _ListControllerBase with Store {
     ItemModel(title: 'Item 2'),
     ItemModel(title: 'Item 3'),
   ].asObservable();
+
+  @computed
+  int get totalChecked => listItems.where((item) => item.check).length;
 
   @action
   List<ItemModel> addItem(ItemModel model) => listItems..addAll([model]);

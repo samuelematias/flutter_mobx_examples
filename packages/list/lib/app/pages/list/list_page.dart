@@ -19,6 +19,13 @@ class _ListPageState extends State<ListPage> {
         title: const TextField(
           decoration: InputDecoration(hintText: 'Search...'),
         ),
+        actions: [
+          IconButton(
+              icon: Observer(
+                builder: (_) => Text('${_controller.totalChecked}'),
+              ),
+              onPressed: () {})
+        ],
       ),
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(

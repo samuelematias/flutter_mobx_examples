@@ -1,4 +1,4 @@
-import 'package:mobx/mobx.dart';
+import 'package:common_package/common_package.dart';
 part 'item_model.g.dart';
 
 class ItemModel = _ItemModelBase with _$ItemModel;
