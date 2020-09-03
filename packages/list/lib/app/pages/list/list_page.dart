@@ -34,7 +34,10 @@ class _ListPageState extends State<ListPage> {
             itemCount: _controller.listItems.length,
             itemBuilder: (_, index) {
               final ItemModel item = _controller.listItems[index];
-              return Itemwidget(item: item);
+              return Itemwidget(
+                item: item,
+                removeClicked: () => _onPressedRemoveItem(model: item),
+              );
             }),
       );
 
@@ -47,6 +50,7 @@ class _ListPageState extends State<ListPage> {
         content: TextField(
           decoration: const InputDecoration(
               labelText: 'New item', border: OutlineInputBorder()),
+          autofocus: true,
           onChanged: model.setTitle,
         ),
         actions: <Widget>[
@@ -65,5 +69,9 @@ class _ListPageState extends State<ListPage> {
   void _onPressedSaveButton({@required ItemModel model}) {
     _controller.addItem(model);
     Navigator.pop(context);
+  }
+
+  void _onPressedRemoveItem({@required ItemModel model}) {
+    _controller.removeItem(model);
   }
 }

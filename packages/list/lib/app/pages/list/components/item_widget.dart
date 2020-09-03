@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import '../../../models/item_model.dart';
 
 class Itemwidget extends StatelessWidget {
-  const Itemwidget({Key key, this.item}) : super(key: key);
+  const Itemwidget({Key key, this.item, this.removeClicked}) : super(key: key);
 
   final ItemModel item;
+  final VoidCallback removeClicked;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class Itemwidget extends StatelessWidget {
           trailing: IconButton(
             icon: const Icon(Icons.remove_circle),
             color: Colors.red,
-            onPressed: () {},
+            onPressed: removeClicked,
           ),
         );
       },
@@ -31,5 +32,7 @@ class Itemwidget extends StatelessWidget {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties.add(DiagnosticsProperty<ItemModel>('item', item));
+    properties
+        .add(DiagnosticsProperty<Function>('removeClicked', removeClicked));
   }
 }
