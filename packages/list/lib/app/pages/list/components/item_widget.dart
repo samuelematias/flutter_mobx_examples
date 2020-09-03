@@ -1,3 +1,4 @@
+import 'package:common_package/common_package.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../models/item_model.dart';
@@ -9,14 +10,20 @@ class Itemwidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(item.title),
-      leading: Checkbox(value: item.check, onChanged: (bool value) {}),
-      trailing: IconButton(
-        icon: const Icon(Icons.remove_circle),
-        color: Colors.red,
-        onPressed: () {},
-      ),
+    return Observer(
+      builder: (_) {
+        return ListTile(
+          title: Text(item.title),
+          leading: Checkbox(
+              value: item.check,
+              onChanged: (bool value) => item.setCheck(value: value)),
+          trailing: IconButton(
+            icon: const Icon(Icons.remove_circle),
+            color: Colors.red,
+            onPressed: () {},
+          ),
+        );
+      },
     );
   }
 
