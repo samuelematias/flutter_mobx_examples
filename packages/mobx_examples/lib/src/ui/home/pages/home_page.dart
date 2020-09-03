@@ -3,6 +3,7 @@ import 'package:common_package/common_package.dart';
 import 'package:form_package/form_package.dart';
 import 'package:increment_counter_package/increment_counter_package.dart';
 import 'package:input_fields_package/input_fields_package.dart';
+import 'package:list_package/list_package.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -43,6 +44,17 @@ class HomePage extends StatelessWidget {
                 context,
                 MaterialPageRoute<FormPage>(
                     builder: (context) => const FormPage()),
+              );
+            },
+          ),
+          _buildFeatureOptions(
+            context,
+            featureName: 'List',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<ListPage>(
+                    builder: (context) => const ListPage()),
               );
             },
           ),
