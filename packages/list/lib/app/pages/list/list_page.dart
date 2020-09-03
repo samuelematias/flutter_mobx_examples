@@ -16,8 +16,9 @@ class _ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const TextField(
-          decoration: InputDecoration(hintText: 'Search...'),
+        title: TextField(
+          decoration: const InputDecoration(hintText: 'Search...'),
+          onChanged: _controller.setFilter,
         ),
         actions: [
           IconButton(
@@ -38,9 +39,9 @@ class _ListPageState extends State<ListPage> {
 
   Widget _buildBody() => Observer(
         builder: (_) => ListView.builder(
-            itemCount: _controller.listItems.length,
+            itemCount: _controller.listFiltered.length,
             itemBuilder: (_, index) {
-              final ItemModel item = _controller.listItems[index];
+              final ItemModel item = _controller.listFiltered[index];
               return Itemwidget(
                 item: item,
                 removeClicked: () => _onPressedRemoveItem(model: item),
@@ -59,6 +60,7 @@ class _ListPageState extends State<ListPage> {
               labelText: 'New item', border: OutlineInputBorder()),
           autofocus: true,
           onChanged: model.setTitle,
+          onEditingComplete: () => _onPressedSaveButton(model: model),
         ),
         actions: <Widget>[
           FlatButton(

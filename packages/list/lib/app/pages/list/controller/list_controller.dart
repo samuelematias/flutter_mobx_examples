@@ -15,6 +15,24 @@ abstract class _ListControllerBase with Store {
   @computed
   int get totalChecked => listItems.where((item) => item.check).length;
 
+  @computed
+  List<ItemModel> get listFiltered {
+    if (filter.isEmpty) {
+      return listItems;
+    } else {
+      return listItems
+          .where(
+              (item) => item.title.toLowerCase().contains(filter.toLowerCase()))
+          .toList();
+    }
+  }
+
+  @observable
+  String filter = '';
+
+  @action
+  String setFilter(String value) => filter = value;
+
   @action
   List<ItemModel> addItem(ItemModel model) => listItems..addAll([model]);
 
